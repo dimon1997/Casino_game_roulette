@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #gamePlace {
+        width: 955px;
+        height: 312px;
+        padding: 108px;
+        border-radius: 44%;
+        background-color: green;
+        display: flex;
+    }
+
+    .leftGamePlaceBlock {
+        height: 312px;
+        width: 72px;
+    }
+
+    .midlGamePlaceBlock {
+        min-width: 816px;
+        height: 312px;
+    }
+
+    .rightGamePlaceBlock {
+        width: 68px;
+        height: 312px;
+    }
+
+
+    /* MAIN BLOCK */
+    #mainBlock {
+        height: 201px;
+        display: flex;
+        width: 100%;
+    }
+
+    #cellBox {
+        display: flex;
+        width: 100%;
+    }
+
+    .zero {
+        display: flex;
+        background-color: green;
+        border: 1px solid aliceblue;
+        margin-top: 37px;
+        height: 197px;
+        min-width: 70px;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: aliceblue;
+        border-radius: 45% 0% 0% 45%;
+    }
+
+
+    .cell {
+        display: flex;
+        width: 66px;
+        height: 65px;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 600;
+        color: aliceblue;
+    }
+
+    .redCell {
+        background-color: rgb(223, 10, 10);
+        border: 1px solid aliceblue;
+
+    }
+
+    .blackCell {
+        background-color: rgb(14, 13, 13);
+        border: 1px solid aliceblue;
+
+    }
+
+    .greenCellTwoToOne {
+        font-size: 18px;
+        height: 65px;
+        width: 66px;
+        /* transform: rotate(-90deg); */
+    }
+
+    /* MAIN BLOCK */
+
+
+    /* MINOR BLOCK */
+    #minorBlock {
+        height: 74px;
+        width: 100%;
+        background-color: green;
+    }
+
+    /* #minorBlock div {
+        display: flex;
+    } */
+
+    #firstStringMinorBlock {
+        display: flex;
+
+        height: 35px;
+
+    }
+
+    #firstStringMinorBlock>div {
+        width: 272px;
+    }
+
+    #secondStringMinorBlock {
+        display: flex;
+        height: 35px;
+
+    }
+
+    #secondStringMinorBlock div {
+        width: 136px;
+    }
+
+    #redCellBet {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        background-color: rgb(223, 10, 10);
+    }
+
+    #blackCellBet {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        background-color: rgb(14, 13, 13);
+    }
+
+
+    /* MINOR BLOCK */
+
+    .greenCell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        border: 1px solid aliceblue;
+        color: aliceblue;
+        font-weight: 600;
+
+    }
+
+    /* accountAmount */
+    #accountAmount {
+        display: flex;
+        justify-content: center;
+        height: 35px;
+        width: 100%;
+        background-color: green;
+        color: aliceblue;
+        font-weight: 600;
+        border: 1px solid aliceblue;
+
+    }
+
+    #accountAmountBlock {
+        display: flex;
+        width: 220px;
+        padding: 2px 5px 2px 5px;
+
+    }
+
+    #accountAmountText {
+        margin-top: 5px;
+        width: 95px;
+
+    }
+
+    #money {
+        width: 105px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(132, 172, 159);
+        border-radius: 5px;
+        padding: 5px 0px 5px 0px;
+        margin-top: 2px;
+        margin-left: 8px;
+    }
+
+    #donatBtn {
+        margin-top: 4px;
+        height: 26px;
+        background-color: bisque;
+        border-radius: 5px;
+        border: 2px solid rgb(190, 155, 108);
+        padding: 2px 5px 2px 5px;
+
+    }
+
+    /* accountAmount */
+
+    /* My Bet */
+    .myBet {
+        width: 50px;
+        height: 50px;
+        box-shadow: 5px 3px 4px #302f2f99;
+        border-radius: 50%;
+        border: dashed rgb(16, 15, 88);
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+    }
+
+    .myBet div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(24 23 114);
+        ;
+    }
+
+    /* My Bet */
+
+    /* betSize */
+    #betSize {
+        width: 260px;
+        height: 35px;
+        background-color: antiquewhite;
+        display: none;
+    }
+
+    /* betSize */
+</style>
+
+<body>
+    <!-- <div id="roll">Roll</div> -->
+
+    <div id="gamePlace">
+        <div class="leftGamePlaceBlock">
+            <div id="0" class="zero" onclick=bet(this.id)>0</div>
+        </div>
+        <div class="midlGamePlaceBlock">
+            <div id="accountAmount">
+                <div id="accountAmountBlock">
+                    <div id="accountAmountText">Ваш баланс: </div>
+                    <div id="money">0</div>
+                </div>
+                <button id="donatBtn" onclick="donatCash()">
+                    Пополнить
+                </button>
+            </div>
+            <div id="cellBox"></div>
+            <div id="minorBlock">
+                <div id="firstStringMinorBlock">
+                    <div id="firstTwelve" class="greenCell" onclick=betOnNotNumberCell(this.id)>Первая 12</div>
+                    <div id="secondTwelve" class="greenCell" onclick=betOnNotNumberCell(this.id)>Вторая 12</div>
+                    <div id="thirdTwelve" class="greenCell" onclick=betOnNotNumberCell(this.id)>Третья 12</div>
+                </div>
+                <div id="secondStringMinorBlock">
+                    <div id="oneToEighteen" class="greenCell" onclick=betOnNotNumberCell(this.id)>1 до 18</div>
+                    <div id="even" class="greenCell" onclick=betOnNotNumberCell(this.id)>Чёт</div>
+                    <div class="greenCell">
+                        <div id="redCellBet" onclick=betOnNotNumberCell(this.id)>Красный</div>
+                    </div>
+                    <div class="greenCell">
+                        <div id="blackCellBet" onclick=betOnNotNumberCell(this.id)>Черный</div>
+                    </div>
+                    <div id="notEven" class="greenCell" onclick=betOnNotNumberCell(this.id)>Нечёт</div>
+                    <div id="nineteenToThirtySix" class="greenCell" onclick=betOnNotNumberCell(this.id)>19 до 36</div>
+                </div>
+            </div>
+        </div>
+        <div class="rightGamePlaceBlock">
+            <div style="margin-top: 37px;">
+                <div id="firstTwoToOne" class="greenCell greenCellTwoToOne" onclick=betOnNotNumberCell(this.id)>2 к 1</div>
+                <div id="secondTwoToOne" class="greenCell greenCellTwoToOne" onclick=betOnNotNumberCell(this.id)>2 к 1</div>
+                <div id="thirdTwoToOne" class="greenCell greenCellTwoToOne" onclick=betOnNotNumberCell(this.id)>2 к 1</div>
+            </div>
+        </div>
+
+    </div>
+    <div id="weel">
+        <button onclick=spin(this.id)>Покрутить колесо</button>
+        <div id="winNumber"></div>
+    </div>
+</body>
+<style>
+    #weel {
+        width: 360px;
+        height: 280px;
+        background-color: green;
+    }
+
+    #weel button {
+        height: 60px;
+        width: 120px;
+        margin-left: 106px;
+        margin-top: 50px;
+        background-color: bisque;
+        border-radius: 13%;
+        border: 3px solid rgb(190, 155, 108);
+        padding: 2px 5px 2px 5px;
+        cursor: pointer;
+    }
+
+    #winNumber {
+        margin-top: 30px;
+        margin-left: 147px;
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        text-shadow: 3px -2px 1px gray;
+    }
+</style>
+
+<script>
+    let cellArray = [
+        { number: 0, cellColor: 'zero', bet: 0 },
+        { number: 1, cellColor: 'redCell', bet: 0 },
+        { number: 2, cellColor: 'blackCell', bet: 0 },
+        { number: 3, cellColor: 'redCell', bet: 0 },
+        { number: 4, cellColor: 'blackCell', bet: 0 },
+        { number: 5, cellColor: 'redCell', bet: 0 },
+        { number: 6, cellColor: 'blackCell', bet: 0 },
+        { number: 7, cellColor: 'redCell', bet: 0 },
+        { number: 8, cellColor: 'blackCell', bet: 0 },
+        { number: 9, cellColor: 'redCell', bet: 0 },
+        { number: 10, cellColor: 'blackCell', bet: 0 },
+        { number: 11, cellColor: 'blackCell', bet: 0 },
+        { number: 12, cellColor: 'redCell', bet: 0 },
+        { number: 13, cellColor: 'blackCell', bet: 0 },
+        { number: 14, cellColor: 'redCell', bet: 0 },
+        { number: 15, cellColor: 'blackCell', bet: 0 },
+        { number: 16, cellColor: 'redCell', bet: 0 },
+        { number: 17, cellColor: 'blackCell', bet: 0 },
+        { number: 18, cellColor: 'redCell', bet: 0 },
+        { number: 19, cellColor: 'redCell', bet: 0 },
+        { number: 20, cellColor: 'blackCell', bet: 0 },
+        { number: 21, cellColor: 'redCell', bet: 0 },
+        { number: 22, cellColor: 'blackCell', bet: 0 },
+        { number: 23, cellColor: 'redCell', bet: 0 },
+        { number: 24, cellColor: 'blackCell', bet: 0 },
+        { number: 25, cellColor: 'redCell', bet: 0 },
+        { number: 26, cellColor: 'blackCell', bet: 0 },
+        { number: 27, cellColor: 'redCell', bet: 0 },
+        { number: 28, cellColor: 'blackCell', bet: 0 },
+        { number: 29, cellColor: 'blackCell', bet: 0 },
+        { number: 30, cellColor: 'redCell', bet: 0 },
+        { number: 31, cellColor: 'blackCell', bet: 0 },
+        { number: 32, cellColor: 'redCell', bet: 0 },
+        { number: 33, cellColor: 'blackCell', bet: 0 },
+        { number: 34, cellColor: 'redCell', bet: 0 },
+        { number: 35, cellColor: 'blackCell', bet: 0 },
+        { number: 36, cellColor: 'redCell', bet: 0 },
+    ];
+    let minorCellArray = [
+        {typeCell: 'firstTwoToOne', bet: 0},
+        {typeCell: 'secondTwoToOne', bet: 0},
+        {typeCell: 'thirdTwoToOne', bet: 0},
+        {typeCell: 'firstTwelve', bet: 0},
+        {typeCell: 'secondTwelve', bet: 0},
+        {typeCell: 'thirdTwelve', bet: 0},
+        {typeCell: 'oneToEighteen', bet: 0},
+        {typeCell: 'even', bet: 0},
+        {typeCell: 'redCellBet', bet: 0},
+        {typeCell: 'blackCellBet', bet: 0},
+        {typeCell: 'notEven', bet: 0},
+        {typeCell: 'nineteenToThirtySix', bet: 0},
+    ]
+
+
+    function renderGamePlace() { // Рендер игрового поля
+
+        let cellBox = ``;
+        let row = ``
+        let column = 0;
+
+        for (i = 0; i < cellArray.length; i++) {
+            let element = cellArray[i];
+            if (element.number == 0) {
+                row = `<div id='${element.number}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.number}</div>` + row
+                document.getElementsByClassName('leftGamePlaceBlock').innerHTML = row
+                row = '';
+            } else {
+                if (column <= 2) {
+                    row = `<div id='${element.number}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.number}</div>` + row
+                    column++;
+                } else if (column == 3) {
+                    cellBox += `<div>${row}</div>`
+                    column = 1;
+                    row = '';
+                    row = `<div id='${element.number}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.number}</div>` + row
+                }
+            }
+
+        }
+        if (column == 3) {
+            cellBox += `<div>${row}</div>`
+        }
+        document.getElementById('cellBox').innerHTML = cellBox;
+    }
+
+    renderGamePlace();
+
+
+    let AllCash = 0;
+    let betArray = [];
+    let betSizeWindow = document.getElementById('betSize');
+
+    function donatCash() { // Пополнить
+        let summDonatCash = prompt('Введите суму', '');
+        if (AllCash === 0) {
+            AllCash = Number(summDonatCash)
+            document.getElementById('money').innerText = AllCash;
+        } else {
+            AllCash += Number(summDonatCash);
+            document.getElementById('money').innerText = AllCash;
+        }
+
+    }
+    function rerenderDonatCash() { // обновление кошелька
+        document.getElementById('money').innerText = AllCash;
+    }
+
+
+
+    function bet(id) { // поставить ставку на число
+        if (AllCash === 0) {
+            alert('На балансе 0 монет');
+        } else {
+            let cellInCellArray = cellArray.find(cell => cell.number == id);
+            if (cellInCellArray.bet == 0) {
+                //console.log('first');
+                betPromt = checkBet(cellInCellArray);
+                rerenderBet(betPromt, id);
+            } else {
+                //console.log('second');
+                betPromt = checkBet(cellInCellArray);
+                rerenderBet(betPromt, id);
+            }
+            if (betArray.some(cell => cell.number == id) == false) {
+                betArray.push(cellInCellArray);
+            }
+
+            //console.log(cellArray);
+            console.log(betArray);
+        }
+    }
+
+    function rerenderBet(bet, id) {
+        let betBlock = `<div id='myBet${id}' class='myBet'><div>${bet}</div></div>`
+        document.getElementById(id).innerHTML = betBlock;
+    }
+    function checkBet(cellInCellArray) {
+        betPromt = prompt('Bet', '');
+        AllCash -= betPromt;
+        newBet = cellInCellArray.bet += Number(betPromt);
+        rerenderDonatCash();
+        return newBet;
+    }
+
+    
+
+    
+    function randomInteger(min = 0, max = 36) { //генирация рандомного числа для Колеса фортуны
+        let rand = min - 0.5 + Math.random() * (max - min + 1);
+        return Math.round(rand);
+    }
+    //alert(randomInteger(0, 36));
+
+    function spin(id) { // покрутить колесо
+        if (betArray.length !== 0) {
+            //console.log('spin')
+            let randomWinerNumber = randomInteger();
+            //добавити змінну в якій будуть дані з головного масиву для того щоб перевірити на колір
+            document.getElementById('winNumber').innerHTML = randomWinerNumber;
+            //console.log(randomWinerNumber);
+            if (betArray.some(cell => cell.number == randomWinerNumber) == true) {
+                let winCellInBetArray = betArray.find(cell => cell.number == randomWinerNumber)
+                let winAmount = winCellInBetArray.bet * 2;
+                AllCash += winAmount;
+                console.log(AllCash);
+                deleteAllBet();
+                rerenderDonatCash();
+                alert('you won ' + winAmount)
+            } else {
+                deleteAllBet();
+                alert('try again')
+            }
+        } else {
+            alert('need bet on the game place')
+        }
+
+    }
+
+    function deleteAllBet() { // удаление всех ставок с игрового поля после прокрутки колеса
+        for (i = 0; i < betArray.length; i++) {
+            cellArray.find(cell => cell.number == betArray[i].number).bet = 0;
+            let block = document.getElementById(betArray[i].number);
+            //console.log(block);
+            let betInBlock = document.getElementById(`myBet${betArray[i].number}`);
+            //console.log(betInBlock)
+            block.removeChild(betInBlock);
+            renderGamePlace();
+            console.log(cellArray);
+            betArray = [];
+            //console.log(block);
+        }
+    }
+
+    function betOnNotNumberCell(id){
+       let cellInCellArray = minorCellArray.find(cell => cell.typeCell == id);
+       betPromt = checkBet(cellInCellArray);
+       rerenderBet(betPromt, id);
+       if (betArray.some(cell => cell.typeCell == id) == false) {
+                betArray.push(cellInCellArray);
+        }
+        console.log(betArray);
+       console.log(minorCellArray);
+
+    }
+
+</script>
+
+</html>

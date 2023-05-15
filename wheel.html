@@ -71,39 +71,37 @@
 </style>
 
 <body>
-    <div id="inputInGame">
+    <div>
+        <div id="inputInGame">
 
-    </div>
-    <!-- <div id="wheelPlaceBorder">
-        <div id="wheelPlace">
-            <img id="wheel" src="image/wheel.png" alt="">
-            <button id="spinBtn" onclick=spinWheel()>spin</button>
-            <div id="ball"></div>
         </div>
-    </div> -->
+    </div>
+    
     <button id="bet" onclick=render()>bet</button>
 
 </body>
+
 <script>
-    render();
+render();
 
 
-    function render() {
-        let wheelRender = document.getElementById('inputInGame');
-        let wheell = `
-        <div id="wheelPlaceBorder">
-        <div id="wheelPlace">
-            <img id="wheel" src="image/wheel.png" alt="">
-            <button id="spinBtn" onclick=spinWheel()>spin</button>
-            <div id="ball"></div>
-        </div>
-        </div>
-        `
-        wheelRender.innerHTML = wheell;
-        console.log('spin')
-    }
-</script>
-<script>
+function render() {
+    let wheelRender = document.getElementById('inputInGame');
+    let wheell = `
+    <div id="wheelPlaceBorder">
+    <div id="wheelPlace">
+        <img id="wheel" src="image/wheel.png" alt="">
+        <button id="spinBtn" onclick=spinWheel()>spin</button>
+        <div id="ball"></div>
+    </div>
+    </div>
+    `
+    wheelRender.innerHTML = wheell;
+    console.log('spin')
+}
+
+
+
     const cellInWheel = [
         { angle: 0, velueCell: 0 },
         { angle: 10, velueCell: 32 },
@@ -144,15 +142,16 @@
         { angle: 360, velueCell: 26 },
     ]
 
-    function randomDeg(min = 1, max = 36) { //генирация рандомного числа для Колеса фортуны
+    function randomDeg(min = 1, max = 36) { //генерация рандомного числа для Колеса фортуны
         let rand = min - 0.5 + Math.random() * (max - min + 1);
         return Math.round(rand);
     }
 
-    let randomAngle = randomDeg()
+    let randomAngle;
 
 
     function spinWheel() {
+        randomAngle = randomDeg();
         //console.log(randomAngle + '0')
         let rotateDeg = 2880 + (randomAngle * (360 / 37))
         //console.log(rotateDeg);

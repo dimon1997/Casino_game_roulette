@@ -8,22 +8,28 @@
     <title>Document</title>
 </head>
 <style>
+    html, body{
+        width: 100%;
+        height: 100%;
+    }
     * {
         margin: 0;
         padding: 0;
     }
-    body{
-        background-image: url(image/background_texture.jpg);
+
+    body {
+        background: radial-gradient(circle at 39% 57.5%, #035e04 0%, #035e04 90%)
+        /* background-image: url(image/background_green.jpg); */
 
     }
 
     #gamePlace {
-        width: 955px;
-        height: 312px;
-        padding: 108px;
-        border-radius: 44%;
-        background-color: green;
-        display: flex;
+        width: 1035px;
+    height: 330px;
+    padding: 108px 40px 45px 110px;
+    /* border-radius: 44%; */
+    /* background-color: green; */
+    display: flex;
     }
 
     .leftGamePlaceBlock {
@@ -32,7 +38,7 @@
     }
 
     .midlGamePlaceBlock {
-        min-width: 816px;
+        min-width: 888px;
         height: 312px;
     }
 
@@ -56,10 +62,10 @@
 
     .zero {
         display: flex;
-        background-color: green;
+        /* background-color: green; */
         border: 1px solid aliceblue;
         margin-top: 37px;
-        height: 197px;
+        height: 221px;
         min-width: 70px;
         justify-content: center;
         align-items: center;
@@ -72,8 +78,8 @@
 
     .cell {
         display: flex;
-        width: 66px;
-        height: 65px;
+        width: 72px;
+        height: 72px;
         justify-content: center;
         align-items: center;
         font-size: 22px;
@@ -82,21 +88,21 @@
     }
 
     .redCell {
-        background-color: rgb(223, 10, 10);
+        background-color: #c72510;
         border: 1px solid aliceblue;
 
     }
 
     .blackCell {
-        background-color: rgb(14, 13, 13);
+        background-color: #161611;
         border: 1px solid aliceblue;
 
     }
 
     .greenCellTwoToOne {
         font-size: 18px;
-        height: 65px;
-        width: 66px;
+        height: 72px;
+        width: 72px;
         /* transform: rotate(-90deg); */
     }
 
@@ -107,7 +113,7 @@
     #minorBlock {
         height: 74px;
         width: 100%;
-        background-color: green;
+        /* background-color: green; */
     }
 
     /* #minorBlock div {
@@ -122,7 +128,7 @@
     }
 
     #firstStringMinorBlock>div {
-        width: 272px;
+        width: 294px;
     }
 
     #secondStringMinorBlock {
@@ -132,7 +138,7 @@
     }
 
     #secondStringMinorBlock>div {
-        width: 136px;
+        width: 146px;
     }
 
     #redCell {
@@ -160,7 +166,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: green;
+        /* background-color: green; */
         border: 1px solid aliceblue;
         color: aliceblue;
         font-weight: 600;
@@ -173,7 +179,7 @@
         justify-content: center;
         height: 35px;
         width: 100%;
-        background-color: green;
+        /* background-color: green; */
         color: aliceblue;
         font-weight: 600;
         border: 1px solid aliceblue;
@@ -237,48 +243,18 @@
         height: 50px;
         border-radius: 50%;
         background-color: rgb(24 23 114);
-        ;
+        font-size: 18px;
     }
 
-    /* Weel */
-    #weel {
-        width: 360px;
-        height: 280px;
-        background-color: green;
-        margin-left: 15px;
-        /* border: 2px solid rgb(216, 139, 72); */
-        border-radius: 0px 0px 10px 10px;
-        box-shadow: 3px 2px 1px #818181;
-    }
+    
 
-    #weel button {
-        height: 60px;
-        width: 120px;
-        margin-left: 106px;
-        margin-top: 50px;
-        background-color: bisque;
-        border-radius: 13%;
-        border: 3px solid rgb(190, 155, 108);
-        padding: 2px 5px 2px 5px;
-        cursor: pointer;
-    }
-
-    #winNumber {
-        margin-top: 30px;
-        margin-left: 147px;
-        font-size: 40px;
-        font-weight: 600;
-        color: white;
-        text-shadow: 3px -2px 1px gray;
-    }
-
-    /* Weel */
+    /* MessagesPlace */
     #messagesPlace {
         display: flex;
         margin-top: 25px;
     }
 
-    /* Weel */
+    /* MessagesPlace */
 
     /* Chat with info about bet */
     #chatWithInfoAboutBet {
@@ -349,6 +325,10 @@
     /* App */
 
     /* WHEEL STYLE */
+    #inputWheelInGame{
+        padding-top: 45px;
+        padding-left: 45px;
+    }
 
     #wheelPlaceBorder {
         height: 431px;
@@ -375,21 +355,6 @@
         transition: transform 15s;
     }
 
-    /* #spinBtn {
-        width: 170px;
-        height: 170px;
-        position: absolute;
-        border-radius: 50%;
-        top: 135px;
-        left: 1310px;
-        background-color: unset;
-        border: none;
-        color: #00f3ff;
-        font-size: 16px;
-        text-shadow: 1px 0px 0px grey;
-        cursor: pointer;
-    } */
-
     #ball {
         width: 13px;
         height: 13px;
@@ -397,8 +362,8 @@
         background-color: white;
         position: absolute;
         z-index: 100;
-        top: 102px;
-        left: 1385px;
+        top: 192px;
+        left: 258px;
         box-shadow: 2px 2px 3px;
         border: gray 0.1px solid;
 
@@ -411,19 +376,19 @@
     /* HEADER AND TIMER */
 
     #headerAndTimerBlock {
-        width: 100%;
         height: 45px;
         background-color: #818181;
         display: flex;
         padding-left: 650px;
         align-items: center;
+
     }
 
     #welcomeMessage {
         font-size: 18px;
         font-weight: 600;
     }
-    
+
 
     #timerSpin {
         display: none;
@@ -452,7 +417,7 @@
         color: white;
     }
 
-    #waitingResult{
+    #waitingResult {
         width: 100%;
         color: orange;
         display: none;
@@ -460,6 +425,95 @@
 
 
     /* HEADER AND TIMER */
+
+    /* MODAL WINDOW */
+
+    #modalWindow {
+        display: none;
+    }
+
+    #modal {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    #modalContent {
+        background-color: #fefefe;
+        margin: 15% auto;
+        border: 1px solid #888;
+        width: 474px;
+        height: 222px;
+    }
+
+    #btncloseModal {
+        color: #878383;
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        height: 25px;
+        width: 25px;
+        margin-top: 3px;
+        margin-right: 3px;
+        background: none;
+        border: none;
+    }
+
+    #btncloseModal:hover,
+    #ccloseModal:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #headerModal {
+        height: 14%;
+        /* background-color: gray; */
+    }
+
+    #mainModal {
+        height: 90%;
+        background-color: #cac8c8;
+    }
+
+    #messageModal {
+        padding-top: 7%;
+        padding-left: 33%;
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    #inputModal {
+        margin-left: 25%;
+        width: 234px;
+        height: 28px;
+        color: black;
+        font-size: 30px;
+        background-color: #b2ddbf;
+    }
+    #rangeBlock{
+        padding-left: 118px;
+        padding-top: 6px;
+    }
+    #rangeBlock input{
+        width: 240px;
+    }
+
+    #btnModal {
+        margin-top: 20px;
+        margin-left: 212px;
+        width: 68px;
+        height: 26px;
+    }
+
+    /* MODAL WINDOW */
 </style>
 
 <body>
@@ -480,6 +534,7 @@
 
     </div>
     <div id="wrapperGamePlace">
+        <div id="inputWheelInGame"></div>
         <div id="gamePlace">
             <div class="leftGamePlaceBlock">
                 <div id="0" class="zero" onclick=bet(this.id)>0</div>
@@ -490,7 +545,7 @@
                         <div id="accountAmountText">Ваш баланс: </div>
                         <div id="money">0</div>
                     </div>
-                    <button id="donatBtn" onclick="donatCash()">
+                    <button id="donatBtn" onclick="refill()">
                         Пополнить
                     </button>
                 </div>
@@ -523,67 +578,112 @@
                 </div>
             </div>
         </div>
-        <div id="inputInGame">
-        </div>
+        <!-- <div id="inputWheelInGame"></div> -->
     </div>
-    <!-- <div id="gamePlace">
-        <div class="leftGamePlaceBlock">
-            <div id="0" class="zero" onclick=bet(this.id)>0</div>
-        </div>
-        <div class="midlGamePlaceBlock">
-            <div id="accountAmount">
-                <div id="accountAmountBlock">
-                    <div id="accountAmountText">Ваш баланс: </div>
-                    <div id="money">0</div>
-                </div>
-                <button id="donatBtn" onclick="donatCash()">
-                    Пополнить
-                </button>
-            </div>
-            <div id="cellBox"></div>
-            <div id="minorBlock">
-                <div id="firstStringMinorBlock">
-                    <div id="firstTwelve" class="greenCell" onclick=bet(this.id)></div>
-                    <div id="secondTwelve" class="greenCell" onclick=bet(this.id)></div>
-                    <div id="thirdTwelve" class="greenCell" onclick=bet(this.id)></div>
-                </div>
-                <div id="secondStringMinorBlock">
-                    <div id="oneToEighteen" class="greenCell" onclick=bet(this.id)></div>
-                    <div id="even" class="greenCell" onclick=bet(this.id)></div>
-                    <div class="greenCell">
-                        <div id="redCell" onclick=bet(this.id)></div>
-                    </div>
-                    <div class="greenCell">
-                        <div id="blackCell" onclick=bet(this.id)></div>
-                    </div>
-                    <div id="notEven" class="greenCell" onclick=bet(this.id)></div>
-                    <div id="nineteenToThirtySix" class="greenCell" onclick=bet(this.id)></div>
-                </div>
-            </div>
-        </div>
-        <div class="rightGamePlaceBlock">
-            <div style="margin-top: 37px;">
-                <div id="firstTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
-                <div id="secondTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
-                <div id="thirdTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
-            </div>
-        </div>  
-    </div> -->
     <div id="messagesPlace">
         <div id="chatWithInfoAboutBet">
             <div id="headerChat">Информация о ставках:</div>
             <div id="contentChat"></div>
         </div>
-        <!-- <div id="weel">
-            <button onclick=spin(this.id)>Покрутить колесо</button>
-            <div id="winNumber"></div>
-        </div> -->
     </div>
-
+    <div id="modalWindow"></div>
 </body>
 
 
 <script>
+    let modalWindow = document.getElementById('modalWindow');
+
+    function closeModal() {
+        modalWindow.style.display = 'none';
+    }
+    window.onclick = function (event) {
+        if (event.target == modalWindow) {
+            modalWindow.style.display = "none";
+        }
+    }
+
+    
+    function openModalWindow(type) {
+        let tenPercentOffAllCash = Math.floor(AllCash / 10)
+        const modalWindow = document.getElementById('modalWindow')
+        modalWindow.style.display = 'block';
+        if (type === 'donatType') {
+            modalWindow.innerHTML =
+                `<div id="modal">
+            <div id="modalContent">
+                <div id="headerModal">
+                    <button id="btncloseModal" onclick=closeModal()>&times;</button>
+                </div>
+            <div id="mainModal">
+                <div id="messageModal">Пополнить кошелек</div>
+                <input id="inputModal" type="number">
+                <div>
+                    <button id="btnModal" onclick=returnValueFromModuleWindow('donatType')>ok</button>
+                </div>
+            </div>
+            </div>
+        </div>`
+
+        } else if (type === 'betType') {
+            modalWindow.innerHTML =
+                `<div id="modal">
+            <div id="modalContent">
+                <div id="headerModal">
+                    <button id="btncloseModal" onclick=closeModal()>&times;</button>
+                </div>
+            <div id="mainModal">
+                <div id="messageModal">Размер ставки</div>
+                <input id="inputModal" type="number" value="${tenPercentOffAllCash}">
+                <div id="rangeBlock">
+                    <input type="range" id="rangeModul" min="1" max="${AllCash}" value="${tenPercentOffAllCash}" step="1">
+                </div>
+                <div>
+                    <button id="btnModal" onclick=returnValueFromModuleWindow('betType')>ok</button>
+                </div>
+            </div>
+            </div>
+        </div>`
+        let rangeModul = document.getElementById('rangeModul');
+        let inputModal = document.getElementById('inputModal');
+
+        inputModal.value = rangeModul.value;
+        rangeModul.oninput = function () {
+            inputModal.value = this.value;
+        }
+        inputModal.oninput = function(){
+            rangeModul.value = this.value
+        }
+
+        }
+        
+    }
+
+    function returnValueFromModuleWindow(type) {
+        let inputModuleValue = Number(document.getElementById('inputModal').value);
+        if (type === 'donatType') {
+            let summDonatCash = inputModuleValue;
+            // let summDonatCash = prompt('Введите суму', '');
+            if (AllCash === 0) {
+                AllCash = Number(summDonatCash)
+                document.getElementById('money').innerText = AllCash;
+            } else {
+                AllCash += Number(summDonatCash);
+                document.getElementById('money').innerText = AllCash;
+            }
+        } 
+        else if (type === 'betType') {
+            
+            if (betArray.length === 0) {
+                renderWheel();
+                checkBet(betId, inputModuleValue);
+            } else {
+                checkBet(betId, inputModuleValue);
+            }
+        }
+        modalWindow.style.display = 'none';
+    }
+
+
     const countDownElement = document.getElementById('timer');
     let time = 25;
     let stopTimer = false;
@@ -602,44 +702,28 @@
         }
 
     }
-    function checkStatusTimer(refreshInterval){
+    function checkStatusTimer(refreshInterval) { // проверка шага таймера
         if (stopTimer == true) {
-                clearInterval(refreshInterval);
-                time = 25;
-                stopTimer = false;
-                // countDownElement.innerHTML = '00:00'
-                // clearInterval(refreshInterval);
-                // document.getElementById('timerSpin').style.display = 'none';
-                // document.getElementById('welcomeMessage').style.display = 'block';
-                // spinWheel();
-                // time = 360;
-            }
-            if(time === 0){
-        
-                stopTimerAndSpinWhell(refreshInterval);
-            }
+            clearInterval(refreshInterval);
+            time = 25;
+            stopTimer = false;
+        }
+        if (time === 0) {
+
+            stopTimerAndSpinWhell(refreshInterval);
+        }
     }
 
-    function stopTimerAndSpinWhell(refreshInterval){ // принудительная остановка таймера и запуск колеса
-      
+    function stopTimerAndSpinWhell(refreshInterval) { // принудительная остановка таймера и запуск колеса
         stopTimer = true;
-        //clearInterval(refreshInterval);
-        //time = 0;
-        //countDownElement.innerHTML = '00:00'
         spinWheel();
-        //time = 25;
         document.getElementById('timerSpin').style.display = 'none';
-        ///////document.getElementById('welcomeMessage').style.display = 'block';
     }
 
-
-
-
-    
 
 
     function renderWheel() {
-        let wheelRender = document.getElementById('inputInGame');
+        let wheelRender = document.getElementById('inputWheelInGame');
         let wheell = `
         <div id="wheelPlaceBorder">
         <div id="wheelPlace">
@@ -649,7 +733,7 @@
         </div>
         `
         wheelRender.innerHTML = wheell;
-        console.log('renderWheel')
+        //console.log('renderWheel')
     }
 
 
@@ -731,8 +815,8 @@
         analisisWinerCellArray = [];
         // console.log(randomWinerNumber);
         document.getElementById('waitingResult').style.display = 'none';
-        document.getElementById('welcomeMessage').style.display = 'block'; 
-        console.log(randomWinerNumber.velueCell);
+        document.getElementById('welcomeMessage').style.display = 'block';
+        //console.log(randomWinerNumber.velueCell);
     }
 
 
@@ -804,7 +888,7 @@
         let cellBox = ``;
         let row = ``
         let column = 0;
-        if(checkRenderWheel === false){
+        if (checkRenderWheel === false) {
             renderWheel();
             checkRenderWheel = true;
         }
@@ -847,18 +931,23 @@
     }
     renderChat();
 
-    function donatCash() { // Пополнить
-        let summDonatCash = prompt('Введите суму', '');
-        if (AllCash === 0) {
-            AllCash = Number(summDonatCash)
-            document.getElementById('money').innerText = AllCash;
-        } else {
-            AllCash += Number(summDonatCash);
-            document.getElementById('money').innerText = AllCash;
-        }
+    function refill() { // Пополнить
+        let type = 'donatType';
+        openModalWindow(type);
+        //let summDonatCash = prompt('Введите суму', '');
+        // if (AllCash === 0) {
+        //     AllCash = Number(summDonatCash)
+        //     document.getElementById('money').innerText = AllCash;
+        // } else {
+        //     AllCash += Number(summDonatCash);
+        //     document.getElementById('money').innerText = AllCash;
+        // }
 
     }
-    function rerenderDonatCash() { // обновление кошелька
+
+
+
+    function rerenderRefill() { // обновление кошелька
         document.getElementById('money').innerText = AllCash;
     }
 
@@ -867,42 +956,62 @@
         document.getElementById(id).innerHTML = betBlock;
     }
 
+    let betId = 0;
     function bet(id) { // поставить ставку на число
-        if (AllCash === 0) {
+        if (AllCash === 0 ) {
             messageArray.unshift({ message: 'На балансе 0 монет', textStyle: 'chatTextWarning' })
             renderChat();
         } else {
-            if (betArray.length === 0) {
-                renderWheel();
-                startTimerToSpin();
-                document.getElementById('welcomeMessage').style.display = 'none';
-                document.getElementById('timerSpin').style.display = 'block';
-                checkBet(id);
-            } else {
-                checkBet(id);
-            }
-
+            let type = 'betType';
+        betId = id;
+        openModalWindow(type);
         }
+        
+
+        // if (AllCash === 0) {
+        //     messageArray.unshift({ message: 'На балансе 0 монет', textStyle: 'chatTextWarning' })
+        //     renderChat();
+        // } else {
+        //     if (betArray.length === 0) {
+        //         renderWheel();
+        //         startTimerToSpin();
+        //         document.getElementById('welcomeMessage').style.display = 'none';
+        //         document.getElementById('timerSpin').style.display = 'block';
+        //         checkBet(id);
+        //     } else {
+        //         checkBet(id);
+        //     }
+
+        // }
     }
 
 
-    function checkBet(id) { // анализ ставки
-        betPromt = Number(prompt('Bet', ''));
+    function checkBet(id, inputModuleValue) { // анализ ставки
+        //betValue = Number(prompt('Bet', ''));
+        let betValue = inputModuleValue;
         let bet;
-        if (Number.isInteger(betPromt) == true) {
-            if (betPromt > AllCash) {
+        if (Number.isInteger(betValue) == true) {
+            if (betValue > AllCash) {
                 messageArray.unshift({ message: 'Ваша ставка привишает суму на балансе', textStyle: 'chatTextWarning', sizeCashe: '' })
+                renderChat();
+            } else if(betValue < 1){
+                messageArray.unshift({ message: 'Минимальная ставка 1', textStyle: 'chatTextWarning', sizeCashe: '' })
                 renderChat();
             } else {
                 let cellInCellArray = cellArray.find(cell => cell.nameCell == id);
                 if (cellInCellArray.bet == 0) {
-                    bet = cellInCellArray.bet = betPromt;
+                    bet = cellInCellArray.bet = betValue;
                 } else {
-                    bet = cellInCellArray.bet += betPromt;
+                    bet = cellInCellArray.bet += betValue;
                 }
-                AllCash -= betPromt;
+                AllCash -= betValue;
                 rerenderBet(bet, id);
-                rerenderDonatCash();
+                rerenderRefill();
+                if(betArray.length === 0){
+                    startTimerToSpin();
+                } 
+                document.getElementById('welcomeMessage').style.display = 'none';
+                document.getElementById('timerSpin').style.display = 'block';
                 if (betArray.some(cell => cell.nameCell == id) == false) {
                     betArray.push(cellInCellArray);
                 }
@@ -916,30 +1025,6 @@
     }
 
 
-    // function randomInteger(min = 0, max = 36) { //генирация рандомного числа для Колеса фортуны
-    //     let rand = min - 0.5 + Math.random() * (max - min + 1);
-    //     return Math.round(rand);
-    // }
-
-
-
-
-
-    // function spin() {
-    //     if (betArray.length !== 0) {
-    //         let randomWinerNumber = randomInteger();
-    //         document.getElementById('winNumber').innerHTML = randomWinerNumber;
-    //         analysisOfTheWinningNumber(randomWinerNumber);
-    //         comparisonOfBetsWithTheWinningNumber();
-    //         deleteAllBet();
-    //         analisisWinerCellArray = [];
-
-    //     } else {
-    //        messageArray.unshift({message: 'Нет ставок на игровом поле', textStyle: 'chatTextWarning', sizeCashe: ''})
-    //         renderChat();
-    //         //alert('Нет ставок на игровом поле');
-    //     }
-    // }
 
 
     function analysisOfTheWinningNumber(randomWinerNumber) { // анализ победного числа
@@ -993,24 +1078,32 @@
             analisisWinerCellArray.push(newObj);
         }
         //console.log(analisisWinerCellArray);
-        console.log(cellArray)
+        //console.log(cellArray)
     }
 
     function comparisonOfBetsWithTheWinningNumber() { //сравнение ставок с победным числом
+        //let sumResult = 0;
         betArray.forEach(element => {
             if (analisisWinerCellArray.find(obj => obj.nameCell == element.nameCell)) {
-                let winCash = element.bet + element.bet * element.coefficient
+                let winCash = element.bet + element.bet * element.coefficient;
+                //sumResult += element.bet * element.coefficient
                 AllCash += winCash;
                 messageArray.unshift({ message: 'Вы выиграли: ', textStyle: 'chatTextWin', sizeCashe: `${winCash}` })
                 renderChat();
                 //alert('Вы выиграли: ' + winCash);
-                rerenderDonatCash();
+                rerenderRefill();
             } else {
+                //sumResult += - element.bet; 
                 messageArray.unshift({ message: 'Попробуйте ещё:', textStyle: 'chatTextLose', sizeCashe: `- ${element.bet}` })
                 renderChat();
                 //alert('Попробуйте ещё')
             }
         });
+        // if(sumResult > 0){
+        //     console.log('+' + sumResult);
+        // } else{
+        //     console.log('-' + sumResult);
+        // }
     }
 
 
@@ -1022,9 +1115,9 @@
             let block = document.getElementById(element.nameCell);
             let betInBlock = document.getElementById(`myBet${element.nameCell}`);
             block.removeChild(betInBlock);
-            renderGamePlace();
-            betArray = [];
         });
+        renderGamePlace();
+        betArray = [];
     }
 
 

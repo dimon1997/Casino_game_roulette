@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Casino</title>
+    <link rel="icon" type="image/x-icon" href="image/favIconTitle/casino-chip.png">
 </head>
 <style>
-    html, body{
+    html,
+    body {
         width: 100%;
         height: 100%;
     }
+
     * {
         margin: 0;
         padding: 0;
@@ -19,17 +22,27 @@
 
     body {
         background: radial-gradient(circle at 39% 57.5%, #035e04 0%, #035e04 90%)
-        /* background-image: url(image/background_green.jpg); */
+            /* background-image: url(image/background_green.jpg); */
 
+    }
+
+    button {
+        margin-top: 4px;
+        /* height: 26px; */
+        background-color: bisque;
+        border-radius: 5px;
+        border: 2px solid rgb(190, 155, 108);
+        padding: 2px 8px 2px 8px;
+        cursor: pointer;
     }
 
     #gamePlace {
         width: 1035px;
-    height: 330px;
-    padding: 108px 40px 45px 110px;
-    /* border-radius: 44%; */
-    /* background-color: green; */
-    display: flex;
+        height: 330px;
+        padding: 108px 40px 45px 110px;
+        /* border-radius: 44%; */
+        /* background-color: green; */
+        display: flex;
     }
 
     .leftGamePlaceBlock {
@@ -48,11 +61,17 @@
     }
 
 
-    /* MAIN BLOCK */
-    #mainBlock {
-        height: 201px;
-        display: flex;
-        width: 100%;
+    /* GAME PLACE */
+    .cell {
+        border: 1px solid aliceblue;
+        font-weight: 600;
+        color: aliceblue;
+        cursor: pointer;
+    }
+
+    .cell:hover {
+        background-color: rgb(104, 102, 100);
+        opacity: 0.99;
     }
 
     #cellBox {
@@ -62,21 +81,18 @@
 
     .zero {
         display: flex;
-        /* background-color: green; */
-        border: 1px solid aliceblue;
         margin-top: 37px;
         height: 221px;
         min-width: 70px;
         justify-content: center;
         align-items: center;
         font-size: 32px;
-        font-weight: 600;
-        color: aliceblue;
         border-radius: 45% 0% 0% 45%;
     }
 
 
-    .cell {
+
+    .cellNumber {
         display: flex;
         width: 72px;
         height: 72px;
@@ -84,36 +100,29 @@
         align-items: center;
         font-size: 22px;
         font-weight: 600;
-        color: aliceblue;
     }
 
     .redCell {
         background-color: #c72510;
-        border: 1px solid aliceblue;
-
     }
 
     .blackCell {
         background-color: #161611;
-        border: 1px solid aliceblue;
-
     }
 
     .greenCellTwoToOne {
         font-size: 18px;
         height: 72px;
         width: 72px;
-        /* transform: rotate(-90deg); */
     }
 
-    /* MAIN BLOCK */
+    /* GAME PLACE */
 
 
     /* MINOR BLOCK */
     #minorBlock {
         height: 74px;
         width: 100%;
-        /* background-color: green; */
     }
 
     /* #minorBlock div {
@@ -170,7 +179,7 @@
         border: 1px solid aliceblue;
         color: aliceblue;
         font-weight: 600;
-
+        cursor: pointer;
     }
 
     /* accountAmount */
@@ -179,10 +188,11 @@
         justify-content: center;
         height: 35px;
         width: 100%;
-        /* background-color: green; */
         color: aliceblue;
         font-weight: 600;
         border: 1px solid aliceblue;
+        color: white;
+        text-shadow: 1px 2px 2px black;
 
     }
 
@@ -201,14 +211,18 @@
 
     #money {
         width: 105px;
-        height: 15px;
+        height: 25px;
         display: flex;
         justify-content: center;
-        background-color: rgb(132, 172, 159);
+        background-color: #dee5e0;
         border-radius: 5px;
-        padding: 5px 0px 5px 0px;
+        border: 1.5px solid grey;
         margin-top: 2px;
         margin-left: 8px;
+        font-size: 22px;
+        color: #858181;
+        text-shadow: 1px 1px 2px black;
+        box-shadow: 1px 1px 2px black;
     }
 
     #donatBtn {
@@ -246,12 +260,13 @@
         font-size: 18px;
     }
 
-    
+
 
     /* MessagesPlace */
     #messagesPlace {
         display: flex;
         margin-top: 25px;
+        padding-left: 80px;
     }
 
     /* MessagesPlace */
@@ -325,7 +340,7 @@
     /* App */
 
     /* WHEEL STYLE */
-    #inputWheelInGame{
+    #inputWheelInGame {
         padding-top: 45px;
         padding-left: 45px;
     }
@@ -377,16 +392,20 @@
 
     #headerAndTimerBlock {
         height: 45px;
-        background-color: #818181;
+        background-color: #035e04;
         display: flex;
         padding-left: 650px;
         align-items: center;
-
+        border-bottom: 1px solid white;
+        box-shadow: -2px 1px 6px #cbd1cc;
     }
 
     #welcomeMessage {
         font-size: 18px;
         font-weight: 600;
+        color: white;
+        text-shadow: 1px 2px 2px black;
+        display: block;
     }
 
 
@@ -399,28 +418,34 @@
     }
 
     #timerSpin div:nth-child(1) {
-        font-size: 18px;
+        font-size: 25px;
         color: black;
         font-weight: 400;
         margin-right: 15px;
+        color: white;
     }
 
     #timerSpin div:nth-child(2) {
         margin-right: 15px;
+        color: #c11010;
+        font-size: 25px;
+        justify-content: center;
     }
 
-    #timerSpin div:nth-child(3) {}
+    /* #timerSpin div:nth-child(3) {} */
 
     #timer {
-        width: 150px;
+        width: 130px;
         height: 25px;
         color: white;
     }
 
     #waitingResult {
         width: 100%;
-        color: orange;
+        font-size: 25px;
         display: none;
+        color: white;
+        text-shadow: 1px 2px 2px black;
     }
 
 
@@ -474,35 +499,45 @@
 
     #headerModal {
         height: 14%;
-        /* background-color: gray; */
+        background-color: #b6b792;
     }
 
     #mainModal {
         height: 90%;
-        background-color: #cac8c8;
+        background-color: #e5dfd3;
     }
 
     #messageModal {
         padding-top: 7%;
-        padding-left: 33%;
+        text-align: center;
         margin-bottom: 16px;
-        font-size: 18px;
         font-weight: 600;
+        font-size: 20px;
+        text-shadow: 0px 1px 2px #000000;
+        color: #484646;
     }
 
     #inputModal {
         margin-left: 25%;
         width: 234px;
         height: 28px;
-        color: black;
         font-size: 30px;
-        background-color: #b2ddbf;
+        background-color: #dee5e0;
+        color: #858181;
+        text-shadow: 1px 2px 2px black;
+        padding: 2px 2px 2px 8px;
+        border-radius: 5px;
+        border-color: #cbbebe;
+        text-align: center;
+        box-shadow: 1px 1px 2px black;
     }
-    #rangeBlock{
+
+    #rangeBlock {
         padding-left: 118px;
         padding-top: 6px;
     }
-    #rangeBlock input{
+
+    #rangeBlock input {
         width: 240px;
     }
 
@@ -537,7 +572,7 @@
         <div id="inputWheelInGame"></div>
         <div id="gamePlace">
             <div class="leftGamePlaceBlock">
-                <div id="0" class="zero" onclick=bet(this.id)>0</div>
+                <div id="0" class="cell zero" onclick=bet(this.id)>0</div>
             </div>
             <div class="midlGamePlaceBlock">
                 <div id="accountAmount">
@@ -552,35 +587,47 @@
                 <div id="cellBox"></div>
                 <div id="minorBlock">
                     <div id="firstStringMinorBlock">
-                        <div id="firstTwelve" class="greenCell" onclick=bet(this.id)></div>
-                        <div id="secondTwelve" class="greenCell" onclick=bet(this.id)></div>
-                        <div id="thirdTwelve" class="greenCell" onclick=bet(this.id)></div>
+                        <div id="firstTwelve" class="cell greenCell" onclick=bet(this.id)></div>
+                        <div id="secondTwelve" class="cell greenCell" onclick=bet(this.id)></div>
+                        <div id="thirdTwelve" class="cell greenCell" onclick=bet(this.id)></div>
                     </div>
                     <div id="secondStringMinorBlock">
-                        <div id="oneToEighteen" class="greenCell" onclick=bet(this.id)></div>
-                        <div id="even" class="greenCell" onclick=bet(this.id)></div>
-                        <div class="greenCell">
-                            <div id="redCell" onclick=bet(this.id)></div>
+                        <div id="oneToEighteen" class="cell greenCell" onclick=bet(this.id)></div>
+                        <div id="even" class="cell greenCell" onclick=bet(this.id)></div>
+                        <div class="cell greenCell">
+                            <div id="redCell" class="cell" onclick=bet(this.id)></div>
                         </div>
-                        <div class="greenCell">
-                            <div id="blackCell" onclick=bet(this.id)></div>
+                        <div class="cell greenCell">
+                            <div id="blackCell" class="cell" onclick=bet(this.id)></div>
                         </div>
-                        <div id="notEven" class="greenCell" onclick=bet(this.id)></div>
-                        <div id="nineteenToThirtySix" class="greenCell" onclick=bet(this.id)></div>
+                        <div id="notEven" class="cell greenCell" onclick=bet(this.id)></div>
+                        <div id="nineteenToThirtySix" class="cell greenCell" onclick=bet(this.id)></div>
                     </div>
                 </div>
             </div>
             <div class="rightGamePlaceBlock">
                 <div style="margin-top: 37px;">
-                    <div id="firstTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
-                    <div id="secondTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
-                    <div id="thirdTwoToOne" class="greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
+                    <div id="firstTwoToOne" class="cell greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
+                    <div id="secondTwoToOne" class="cell greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
+                    <div id="thirdTwoToOne" class="cell greenCell greenCellTwoToOne" onclick=bet(this.id)></div>
                 </div>
             </div>
         </div>
         <!-- <div id="inputWheelInGame"></div> -->
     </div>
     <div id="messagesPlace">
+        <div id="sessionResultPlace">
+            <div id="sessionResultContent">
+                <p>Результат сесии:</p>
+                <div>
+                    <div id="upOrDownArrow">
+                        <div id="plusResult">&#9206;</div>
+                        <div id="minusResult">&#9207;</div>
+                    </div>
+                    <div id="sessionResult">0</div>
+                </div>
+            </div>
+        </div>
         <div id="chatWithInfoAboutBet">
             <div id="headerChat">Информация о ставках:</div>
             <div id="contentChat"></div>
@@ -589,7 +636,51 @@
     <div id="modalWindow"></div>
 </body>
 
+<style>
+    #sessionResultContent > p{
+        padding-top: 80px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 28px;
+    }
+    #sessionResultPlace {
+        width: 360px;
+        height: 280px;
+        background-color: wheat;
+    }
 
+    #sessionResultContent > div {
+        display: flex;
+        justify-content: center;
+        /* margin-top: 15px; */
+    }
+    #upOrDownArrow{
+        /* margin-left: 85px; */
+        width: 45px;
+    }
+    #upOrDownArrow > div{
+        height: 25px;
+        width: 25px;
+        color: grey;
+        font-size: 47px;
+        text-shadow: 1px 1px 2px black;
+    }
+    /* #plusResult {
+        
+    } */
+
+    /* #minusResult {
+
+    } */
+    #sessionResult{
+        font-size: 50px;
+    font-weight: 600;
+    color: grey;
+    text-shadow: 1px 2px 2px black;
+    padding-top: 20px;
+    }
+</style>
 <script>
     let modalWindow = document.getElementById('modalWindow');
 
@@ -602,7 +693,7 @@
         }
     }
 
-    
+
     function openModalWindow(type) {
         let tenPercentOffAllCash = Math.floor(AllCash / 10)
         const modalWindow = document.getElementById('modalWindow')
@@ -643,19 +734,19 @@
             </div>
             </div>
         </div>`
-        let rangeModul = document.getElementById('rangeModul');
-        let inputModal = document.getElementById('inputModal');
+            let rangeModul = document.getElementById('rangeModul');
+            let inputModal = document.getElementById('inputModal');
 
-        inputModal.value = rangeModul.value;
-        rangeModul.oninput = function () {
-            inputModal.value = this.value;
-        }
-        inputModal.oninput = function(){
-            rangeModul.value = this.value
-        }
+            inputModal.value = rangeModul.value;
+            rangeModul.oninput = function () {
+                inputModal.value = this.value;
+            }
+            inputModal.oninput = function () {
+                rangeModul.value = this.value
+            }
 
         }
-        
+
     }
 
     function returnValueFromModuleWindow(type) {
@@ -670,9 +761,9 @@
                 AllCash += Number(summDonatCash);
                 document.getElementById('money').innerText = AllCash;
             }
-        } 
+        }
         else if (type === 'betType') {
-            
+
             if (betArray.length === 0) {
                 renderWheel();
                 checkBet(betId, inputModuleValue);
@@ -895,18 +986,18 @@
         cellArray.forEach(element => {
             if (element.typeCell == 'numberCell') {
                 if (element.nameCell == 0) {
-                    row = `<div id='${element.nameCell}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
+                    row = `<div id='${element.nameCell}' class='cell cellNumber ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
                     document.getElementsByClassName('leftGamePlaceBlock').innerHTML = row
                     row = '';
                 } else {
                     if (column <= 2) {
-                        row = `<div id='${element.nameCell}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
+                        row = `<div id='${element.nameCell}' class='cell cellNumber ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
                         column++;
                     } else if (column == 3) {
                         cellBox += `<div>${row}</div>`
                         column = 1;
                         row = '';
-                        row = `<div id='${element.nameCell}' class='cell ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
+                        row = `<div id='${element.nameCell}' class='cell cellNumber ${element.cellColor}' onclick=bet(this.id)>${element.nameCell}</div>` + row
                     }
                 }
 
@@ -934,15 +1025,6 @@
     function refill() { // Пополнить
         let type = 'donatType';
         openModalWindow(type);
-        //let summDonatCash = prompt('Введите суму', '');
-        // if (AllCash === 0) {
-        //     AllCash = Number(summDonatCash)
-        //     document.getElementById('money').innerText = AllCash;
-        // } else {
-        //     AllCash += Number(summDonatCash);
-        //     document.getElementById('money').innerText = AllCash;
-        // }
-
     }
 
 
@@ -958,31 +1040,14 @@
 
     let betId = 0;
     function bet(id) { // поставить ставку на число
-        if (AllCash === 0 ) {
+        if (AllCash === 0) {
             messageArray.unshift({ message: 'На балансе 0 монет', textStyle: 'chatTextWarning' })
             renderChat();
         } else {
             let type = 'betType';
-        betId = id;
-        openModalWindow(type);
+            betId = id;
+            openModalWindow(type);
         }
-        
-
-        // if (AllCash === 0) {
-        //     messageArray.unshift({ message: 'На балансе 0 монет', textStyle: 'chatTextWarning' })
-        //     renderChat();
-        // } else {
-        //     if (betArray.length === 0) {
-        //         renderWheel();
-        //         startTimerToSpin();
-        //         document.getElementById('welcomeMessage').style.display = 'none';
-        //         document.getElementById('timerSpin').style.display = 'block';
-        //         checkBet(id);
-        //     } else {
-        //         checkBet(id);
-        //     }
-
-        // }
     }
 
 
@@ -994,7 +1059,7 @@
             if (betValue > AllCash) {
                 messageArray.unshift({ message: 'Ваша ставка привишает суму на балансе', textStyle: 'chatTextWarning', sizeCashe: '' })
                 renderChat();
-            } else if(betValue < 1){
+            } else if (betValue < 1) {
                 messageArray.unshift({ message: 'Минимальная ставка 1', textStyle: 'chatTextWarning', sizeCashe: '' })
                 renderChat();
             } else {
@@ -1007,9 +1072,9 @@
                 AllCash -= betValue;
                 rerenderBet(bet, id);
                 rerenderRefill();
-                if(betArray.length === 0){
+                if (betArray.length === 0) {
                     startTimerToSpin();
-                } 
+                }
                 document.getElementById('welcomeMessage').style.display = 'none';
                 document.getElementById('timerSpin').style.display = 'block';
                 if (betArray.some(cell => cell.nameCell == id) == false) {
@@ -1080,30 +1145,45 @@
         //console.log(analisisWinerCellArray);
         //console.log(cellArray)
     }
-
+    let sumResult = 0;
     function comparisonOfBetsWithTheWinningNumber() { //сравнение ставок с победным числом
-        //let sumResult = 0;
+        console.log(betArray);
         betArray.forEach(element => {
             if (analisisWinerCellArray.find(obj => obj.nameCell == element.nameCell)) {
                 let winCash = element.bet + element.bet * element.coefficient;
-                //sumResult += element.bet * element.coefficient
+                let plusCash = element.bet * element.coefficient;
+                sumResult += element.bet * element.coefficient;
                 AllCash += winCash;
-                messageArray.unshift({ message: 'Вы выиграли: ', textStyle: 'chatTextWin', sizeCashe: `${winCash}` })
+                messageArray.unshift({ message: 'Вы выиграли: ', textStyle: 'chatTextWin', sizeCashe: `+ ${plusCash}` })
                 renderChat();
                 //alert('Вы выиграли: ' + winCash);
                 rerenderRefill();
+                resultOfOneSession();
             } else {
-                //sumResult += - element.bet; 
+                sumResult += - element.bet;
                 messageArray.unshift({ message: 'Попробуйте ещё:', textStyle: 'chatTextLose', sizeCashe: `- ${element.bet}` })
                 renderChat();
+                resultOfOneSession();
                 //alert('Попробуйте ещё')
             }
         });
-        // if(sumResult > 0){
-        //     console.log('+' + sumResult);
-        // } else{
-        //     console.log('-' + sumResult);
-        // }
+    }
+
+    function resultOfOneSession() {
+        let sesionResult = document.getElementById('sessionResult');
+        let plusResultArrow = document.getElementById('plusResult');
+        let minusResultArrow = document.getElementById('minusResult');
+        if(sumResult > 0){
+            minusResultArrow.style.color = 'grey';
+            plusResultArrow.style.color = 'green';
+            sesionResult.style.color = 'green';
+        } else{
+            plusResultArrow.style.color = 'grey';
+            minusResultArrow.style.color = 'red';
+            sesionResult.style.color = 'red';
+        }
+        
+        sesionResult.innerHTML = `<div>${sumResult}</div>`
     }
 
 
